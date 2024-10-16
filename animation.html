@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+
+	<!--java  script begins from here -->
+	<script>
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const bar1 = document.querySelector('.bar1');
+            const ball = document.querySelector('.ball');
+            const bar2 = document.querySelector('.bar2');
+
+            // Function to toggle animation
+            function toggleAnimation(element) {
+                const isAnimating = element.style.animationPlayState === 'paused';
+                element.style.animationPlayState = isAnimating ? 'running' : 'paused';
+            }
+
+            // Event listeners for click events
+            bar1.addEventListener('click', () => toggleAnimation(bar1));
+            ball.addEventListener('click', () => toggleAnimation(ball));
+            bar2.addEventListener('click', () => toggleAnimation(bar2));
+        });
+    </script>
+
+
+
+	<!-- css begins from here -->
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		.container {
+			background-color: black;
+			height: 100vh;
+			width: 100vw;
+			border: 2px solid red;
+
+		}
+		.bar1{
+			height: 32px;
+			width: 170px;
+			border: 2px solid purple;
+			position: relative;
+			animation-name: right;
+			animation-duration: 5s;
+			animation-direction: alternate;
+			animation-iteration-count: 10;
+			
+
+		}
+		@keyframes right{
+			from{
+				background-color: aqua;
+				top:0px;
+				left: 0px;
+
+			}
+			to{
+				background-color: orange;
+				top: 0;
+				left: 1367px;
+
+			}
+		}
+		.ball{
+			background-color: white;
+			height: 70px;
+			width:70px ;
+			border: 2px solid silver;
+			border-radius: 62px;
+			position: relative;
+			animation-name: ball;
+			animation-duration: 5s;
+			animation-direction: alternate;
+			animation-iteration-count: 10;
+			margin-left: auto;
+			margin-right: auto;
+
+		}
+		@keyframes ball{
+			from{
+				
+				top:0px;
+				bottom: 600px;
+
+			}
+			to{
+				
+				top: 600px;
+				bottom: 0px;
+
+			}
+		}
+		.bar2{
+
+			height: 32px;
+			width: 170px;
+			border: 2px solid purple;
+			animation-name:left;
+			animation-duration: 5s;
+			animation-direction: alternate;
+			animation-iteration-count: 10;
+			margin-top: 594px;
+			position:relative;
+		}
+		@keyframes left{
+			from{
+				background-color: aqua;
+				top:0px;
+				left: 1367px;
+
+			}
+			to{
+				background-color: orange;
+				top: 0;
+				left: 0;
+
+			}
+		}
+			
+
+	</style>
+</head>
+
+<body>
+   
+
+	<div class=" container">
+		<div class="bar1">
+
+		</div>
+		<div class="ball"></div>
+		<div class="bar2"></div>
+	</div>
+
+</body>
+
+</html>
